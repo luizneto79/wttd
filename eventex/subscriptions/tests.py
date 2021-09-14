@@ -61,20 +61,20 @@ class SubscribePostTest(TestCase):
 
     def test_subscription_email_from(self):
         email = mail.outbox[0]
-        expected = 'contato@eventex.com.br'
+        expected = 'luiz.neto@resale.com.br'
         self.assertEqual(expected, email.from_email)
 
     def test_subscription_email_to(self):
         email = mail.outbox[0]
-        expected = ['contato@eventex.com.br', 'luizneto79@gmail.com']
+        expected = ['luiz.neto@resale.com.br', 'luizneto79@gmail.com']
         self.assertEqual(expected, email.to)
 
     def test_subscription_email_body(self):
         email = mail.outbox[0]
-        self.assertIn('Luiz Marques Neto', mail.outbox[0].body)
-        self.assertIn('12345678901', mail.outbox[0].body)
-        self.assertIn('luizneto79@gmail.com', mail.outbox[0].body)
-        self.assertIn('51-99999-9999', mail.outbox[0].body)
+        self.assertIn('Luiz Marques Neto', email.body)
+        self.assertIn('12345678901', email.body)
+        self.assertIn('luizneto79@gmail.com', email.body)
+        self.assertIn('51-99999-9999', email.body)
 
 
 class SubscribeInvalidPost(TestCase):
