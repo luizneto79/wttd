@@ -15,7 +15,7 @@ Sistema de Eventos encomendado pela Morena.
 git clone git@github.com:luizneto79/wttd.git
 python -m venv .wttd
 source .wttd/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 cp contrib/env-sample .env
 python manage.py test
 
